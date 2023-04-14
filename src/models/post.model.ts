@@ -2,22 +2,28 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
 export interface IPost {
-  userId: string;
-  postContent: string;
+  authorId: string;
+  title: string;
+  body: string;
+  tags: string[];
   likes: string[];
 }
 
 export const postSchema = new Schema<IPost>(
   {
-    userId: {
+    authorId: {
       type: String,
     },
-    postContent: {
+    title: {
+      type: String,
+    },
+    body: {
       type: String,
     },
     likes: [{ type: String }],
+    tags: [{ type: String }],
   },
   { timestamps: true }
 );
 
-export const Student = mongoose.model<IPost>("Post", postSchema);
+export const Post = mongoose.model<IPost>("Post", postSchema);
