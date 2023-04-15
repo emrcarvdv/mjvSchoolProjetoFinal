@@ -24,12 +24,28 @@ class UsersService {
     return UserRepository.create(user);
   }
 
-  async remove(username: string) {
+  remove(username: string) {
     return UserRepository.remove(username);
   }
 
   update(username: string, user: Partial<IUser>) {
     return UserRepository.update(username, user);
+  }
+
+  async authorization(username: string, password: string) {
+    const user = await UserRepository.getByUsername(username);
+
+    if (!user) throw new Error("Usuário Não Encontrado!");
+
+    const result = await bcrypt.compare(password, user.password);
+
+    if (result) {
+      return jwt.sign({ username: user.username, _id: user._id }, secretJWT, {
+        expiresIn: "1h",
+      });
+    }
+
+    throw new Error("Falha na Autenticação!");
   }
 }
 
