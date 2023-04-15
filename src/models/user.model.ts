@@ -4,23 +4,33 @@ import mongoose from "mongoose";
 export interface IUser {
   username: string;
   email: string;
-  phone: string;
   password: string;
-  bio: number;
+  name: string;
+  phone: string;
+  bio: string;
 }
 
 export const userSchema = new Schema<IUser>(
   {
     username: {
       type: String,
+      unique: true,
     },
     email: {
       type: String,
+      unique: true,
     },
     password: {
       type: String,
     },
+    name: {
+      type: String,
+      unique: true,
+    },
     phone: {
+      type: String,
+    },
+    bio: {
       type: String,
     },
   },
