@@ -2,7 +2,7 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
 export interface IPost {
-  authorId: string;
+  authorUsername: string;
   title: string;
   body: string;
   tags: string[];
@@ -11,7 +11,7 @@ export interface IPost {
 
 export const postSchema = new Schema<IPost>(
   {
-    authorId: {
+    authorUsername: {
       type: String,
     },
     title: {
