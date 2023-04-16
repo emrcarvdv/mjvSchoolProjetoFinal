@@ -6,7 +6,7 @@ export interface IPost {
   title: string;
   body: string;
   tags: string[];
-  likes: string[];
+  likes: number;
 }
 
 export const postSchema = new Schema<IPost>(
@@ -20,7 +20,7 @@ export const postSchema = new Schema<IPost>(
     body: {
       type: String,
     },
-    likes: [{ type: String }],
+    likes: [{ type: Number, default: 0 }],
     tags: [{ type: String }],
   },
   { timestamps: true }
