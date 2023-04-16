@@ -5,19 +5,23 @@ class PostRepository {
     return Post.find();
   }
 
+  getById(id: string) {
+    return Post.findOne({ _id: id });
+  }
+
   getByAuthor(username: String) {
     return Post.find({ authorUsername: username });
   }
 
-  createPost(post: IPost) {
+  create(post: IPost) {
     return Post.create(post);
   }
 
-  updatePost(id: String, post: Partial<IPost>) {
+  update(id: String, post: Partial<IPost>) {
     return Post.updateOne({ id: id }, { $set: post });
   }
 
-  removePost(id: String) {
+  remove(id: String) {
     return Post.deleteOne({ id: id });
   }
 }
