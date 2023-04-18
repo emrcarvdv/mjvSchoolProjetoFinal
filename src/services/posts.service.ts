@@ -1,4 +1,4 @@
-import PostRepository from "../repositories/post.respository";
+import PostRepository from "../repositories/post.repository";
 import { IPost } from "../models/post.model";
 
 class PostsService {
@@ -22,8 +22,8 @@ class PostsService {
     return PostRepository.remove(id);
   }
 
-  update(id: string, post: IPost) {
-    PostRepository.update(id, post);
+  update(id: string, post: Partial<IPost>) {
+    return PostRepository.update(id, post);
   }
 }
 
