@@ -9,6 +9,7 @@ router.post(
   authorizationMiddleware,
   async (req: Request, res: Response) => {
     try {
+      console.log(req.body);
       await PostsService.create(req.body);
       res.send({ message: "Post Criado com Sucesso!" });
     } catch (err: any) {
@@ -37,7 +38,7 @@ router.get(
 );
 
 router.get(
-  "/:username",
+  "/list/:username",
   authorizationMiddleware,
   async (req: Request, res: Response) => {
     const post = await PostsService.getByAuthor(req.params.username);
