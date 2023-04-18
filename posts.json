@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "643daeb49904d1910dce85d9"
+  },
+  "authorUsername": "aaaaa",
+  "title": "Primeiro Post",
+  "body": "Esse é o primeiro post. Ainda está sem controle de acesso!",
+  "likes": [],
+  "tags": [
+    "primeiro, post, oi"
+  ],
+  "createdAt": {
+    "$date": "2023-04-17T20:40:20.713Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-17T20:40:20.713Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643dc7ed9904d1910dce85e1"
+  },
+  "authorUsername": "aaaaa",
+  "title": "Segundo Post",
+  "body": "Esse é o segundo post. Ainda está sem controle de acesso!",
+  "likes": [],
+  "tags": [
+    "segundo",
+    "post",
+    "oi"
+  ],
+  "createdAt": {
+    "$date": "2023-04-17T22:27:57.795Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-17T22:27:57.795Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643e05628e11749e1146a3b2"
+  },
+  "authorUsername": "bbbbb",
+  "title": "Terceiro Post - Atualizado",
+  "body": "Esse é o terceiro post. Atualizado!!!!!",
+  "likes": [],
+  "tags": [
+    "terceiro",
+    "post"
+  ],
+  "createdAt": {
+    "$date": "2023-04-18T02:50:10.413Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-18T03:04:43.173Z"
+  },
+  "__v": 0
+}]
