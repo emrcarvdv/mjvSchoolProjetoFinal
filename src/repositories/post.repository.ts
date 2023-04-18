@@ -18,11 +18,11 @@ class PostRepository {
   }
 
   update(id: String, post: Partial<IPost>) {
-    return Post.updateOne({ id: id }, { $set: post });
+    return Post.updateOne({ _id: id }, { $set: post });
   }
 
   remove(id: String) {
-    return Post.deleteOne({ id: id });
+    return Post.deleteOne({ _id: id });
   }
 }
 
