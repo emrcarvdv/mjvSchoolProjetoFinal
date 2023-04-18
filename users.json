@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "643a0452054fbfc929169367"
+  },
+  "username": "aaaaa",
+  "email": "aaaaa@gmail.com",
+  "password": "$2b$10$SrQBUnMAwb3KsRBq1EoJ9O1MpmQXAgSms0vob/6/jFay5q1dJooFC",
+  "name": "Adamastor de Gaia",
+  "phone": "11 1111-2232",
+  "bio": "Um dos filhos de Gaia",
+  "createdAt": {
+    "$date": "2023-04-15T01:56:35.001Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-18T02:44:53.661Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643a04b1054fbfc929169369"
+  },
+  "username": "bbbbb",
+  "email": "bbbbb@gmail.com",
+  "password": "$2b$10$boe9xVBLZ3qT/iwYvqdZg.tynis6ML5MCACTkC7KLPBbaXkrQuZd2",
+  "name": "B de B",
+  "phone": "11 1111-1234",
+  "bio": "O famoso B de Bola",
+  "createdAt": {
+    "$date": "2023-04-15T01:58:09.026Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-15T01:58:09.026Z"
+  },
+  "__v": 0
+}]
