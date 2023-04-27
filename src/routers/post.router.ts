@@ -1,7 +1,6 @@
 import { Request, Response, Router } from "express";
-import { authorizationMiddleware } from "../middlewares/authorization.middleware";
+import { authorizationMiddleware } from "../middleware/authorization.middleware";
 import PostsService from "../services/posts.service";
-
 const router = Router();
 
 router.post(
