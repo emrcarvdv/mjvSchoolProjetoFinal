@@ -3,7 +3,7 @@ import { IUser } from "../models/user.model";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { validateUserData } from "../utils/validations";
+import { validateUserData } from "../middleware/validation.middleware";
 
 dotenv.config();
 
