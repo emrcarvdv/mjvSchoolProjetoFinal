@@ -3,7 +3,10 @@ import { IUser } from "../models/user.model";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { validateUserData } from "../middleware/validation.middleware";
+import {
+  validateUpdateUserData,
+  validateUserData,
+} from "../middleware/validation.middleware";
 
 dotenv.config();
 
@@ -36,6 +39,11 @@ class UsersService {
   }
 
   update(username: string, user: Partial<IUser>) {
+    const validUser = validateUpdateUserData(user);
+
+    if (validUser.error) {
+      throw new Error(validUser.error.message);
+    }
     return UserRepository.update(username, user);
   }
 
