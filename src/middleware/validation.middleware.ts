@@ -30,8 +30,18 @@ export const validateUpdateUserData = (user: Partial<IUser>) => {
 export const validatePostData = (post: IPost) => {
   const postSchema = Joi.object().keys({
     authorUsername: Joi.string().min(3).max(30).required(),
-    title: Joi.string().min(1).max(40).required(),
-    body: Joi.string().min(1).max(40).required(),
+    title: Joi.string().min(1).max(60).required(),
+    body: Joi.string().min(1).max(400).required(),
+    tags: Joi.array().items(Joi.string()),
+  });
+
+  return postSchema.validate(post);
+};
+
+export const validateUpdatePostData = (post: Partial<IPost>) => {
+  const postSchema = Joi.object().keys({
+    title: Joi.string().min(1).max(60),
+    body: Joi.string().min(1).max(400),
     tags: Joi.array().items(Joi.string()),
   });
 
