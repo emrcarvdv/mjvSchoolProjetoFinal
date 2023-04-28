@@ -1,5 +1,9 @@
 import PostRepository from "../repositories/post.repository";
 import { IPost } from "../models/post.model";
+import {
+  validatePostData,
+  validateUpdatePostData,
+} from "../middleware/validation.middleware";
 
 class PostsService {
   getAll() {
@@ -15,6 +19,12 @@ class PostsService {
   }
 
   async create(post: IPost) {
+    const validPost = validatePostData(post);
+
+    if (validPost.error) {
+      throw new Error(validPost.error.message);
+    }
+
     return PostRepository.create(post);
   }
 
@@ -23,6 +33,12 @@ class PostsService {
   }
 
   update(id: string, post: Partial<IPost>) {
+    const validPost = validateUpdatePostData(post);
+
+    if (validPost.error) {
+      throw new Error(validPost.error.message);
+    }
+
     return PostRepository.update(id, post);
   }
 }
