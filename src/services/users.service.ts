@@ -3,6 +3,10 @@ import { IUser } from "../models/user.model";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import {
+  validateUpdateUserData,
+  validateUserData,
+} from "../middleware/validation.middleware";
 
 dotenv.config();
 
@@ -18,6 +22,12 @@ class UsersService {
   }
 
   async create(user: IUser) {
+    const validUser = validateUserData(user);
+
+    if (validUser.error) {
+      throw new Error(validUser.error.message);
+    }
+
     if (user.password) {
       user.password = await bcrypt.hash(user.password, 10);
     }
@@ -29,6 +39,11 @@ class UsersService {
   }
 
   update(username: string, user: Partial<IUser>) {
+    const validUser = validateUpdateUserData(user);
+
+    if (validUser.error) {
+      throw new Error(validUser.error.message);
+    }
     return UserRepository.update(username, user);
   }
 
